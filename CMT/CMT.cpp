@@ -1,31 +1,27 @@
 
-#include <string>
+#include <memory>
 #include <iostream>
 #include <stdexcept>
-#include <filesystem>
 
+#include "CSVReader.h"
+#include "MarketData.h"
+#include "KafkaProducer.h"
 #include "ReadConfiguration.h"
-#include "IngestData.h"
 
 namespace po = boost::program_options;
-namespace fs = std::filesystem;
-
-
-
-void PublishToKafka()
-{
-
-}
-
 
 int main(int argc, char** argv)
 {
     try
     {
-        auto configuration = ReadConfiguration(argc, argv);
-        IngestData(configuration);
+        const auto configuration = ReadConfiguration(argc, argv);
+        
+        std::shared_ptr<MarketData> market_data;
+        auto data_reader = std::make_unique<CSVReader>(configuration);        
+        data_reader->IngestData(market_data);
 
-        PublishToKafka();
+        auto producer = std::make_unique<KafkaProducer>(market_data);
+        producer->Produce();
 
         return 0;
     }
