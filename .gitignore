@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs/CMT/v16
+/CMT/Debug
+/packages
