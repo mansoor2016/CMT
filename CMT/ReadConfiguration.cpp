@@ -26,14 +26,22 @@ auto ReadConfiguration(int argc, char** argv) -> po::variables_map
             "Mode options [1,2]."
             )
         (
-            "filepath",
+            "datafile",
             po::value<std::string>()->default_value(R"(.\market_data.csv)"),
             "Filepath to input market data."
             );
 
     po::variables_map vm;
-    po::store(po::parse_environment(desc_env, "cmt"), vm);
+
     po::store(po::parse_command_line(argc, argv, desc_env), vm);
+    po::store(
+        po::parse_environment(
+            desc_env,
+            [](const auto& arg) 
+            {
+                return ba::to_lower_copy(arg) == "mode" ? "mode" : "";
+            }),
+        vm);
 
     po::notify(vm);
     return vm;

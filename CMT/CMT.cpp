@@ -4,18 +4,13 @@
 #include <stdexcept>
 #include <filesystem>
 
-#include <boost/program_options.hpp>
-
-
 #include "ReadConfiguration.h"
+#include "IngestData.h"
 
 namespace po = boost::program_options;
 namespace fs = std::filesystem;
 
-void IngestData(po::variables_map configuration)
-{
-    fs::path market_data = configuration[""]
-}
+
 
 void PublishToKafka()
 {

@@ -21,15 +21,21 @@
     <ClCompile Include="ReadConfiguration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IngestData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\..\..\..\Downloads\market_data.csv">
+    <None Include="market_data.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReadConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IngestData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
