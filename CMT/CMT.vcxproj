@@ -146,6 +146,7 @@
     <ClCompile Include="CMT.cpp" />
     <ClCompile Include="CSVReader.cpp" />
     <ClCompile Include="KafkaProducer.cpp" />
+    <ClCompile Include="MarketData.cpp" />
     <ClCompile Include="ReadConfiguration.cpp" />
     <ClCompile Include="StockData.cpp" />
   </ItemGroup>

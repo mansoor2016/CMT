@@ -16,7 +16,8 @@ int main(int argc, char** argv)
     {
         const auto configuration = ReadConfiguration(argc, argv);
         
-        std::shared_ptr<MarketData> market_data;
+        std::shared_ptr<MarketData> market_data = std::make_shared<MarketData>(50'000);
+
         auto data_reader = std::make_unique<CSVReader>(configuration);        
         data_reader->IngestData(market_data);
 

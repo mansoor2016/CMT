@@ -11,6 +11,8 @@ struct StockData
 	std::string name;
 	double price;
 
+	StockData() = delete;
+
 	StockData(std::string&& timestamp, std::string&& name, double price);
 
 	StockData(std::string&& dataRow);

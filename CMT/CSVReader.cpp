@@ -29,14 +29,12 @@ CSVReader::CSVReader(const po::variables_map& config)
 
 void CSVReader::IngestData(std::shared_ptr<MarketData> market_data)
 {
-    
     std::string data_line;
-
     while (std::getline(this->datafile, data_line))
     {
         try
         {
-            auto stock_data = StockData(std::move(data_line));
+            const auto stock_data = StockData(std::move(data_line));
             market_data->data.emplace_back(stock_data);
         }
         catch (std::bad_cast ex)

@@ -39,6 +39,9 @@
     <ClCompile Include="ReadConfiguration.cpp">
       <Filter>Configuration</Filter>
     </ClCompile>
+    <ClCompile Include="MarketData.cpp">
+      <Filter>DataModel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
