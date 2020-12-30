@@ -8,8 +8,6 @@
 #include "KafkaProducer.h"
 #include "ReadConfiguration.h"
 
-namespace po = boost::program_options;
-
 int main(int argc, char** argv)
 {
     try
@@ -21,8 +19,8 @@ int main(int argc, char** argv)
         auto data_reader = std::make_unique<CSVReader>(configuration);        
         data_reader->IngestData(market_data);
 
-        auto producer = std::make_unique<KafkaProducer>(market_data);
-        producer->Produce();
+        auto producer = std::make_unique<KafkaProducer>();
+        producer->Publish(market_data);
 
         return 0;
     }

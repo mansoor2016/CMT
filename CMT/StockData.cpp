@@ -22,3 +22,8 @@ StockData::StockData(std::string&& dataRow)
 	this->name = inputs[1];
 	this->price = boost::lexical_cast<double>(inputs[2]);
 }
+
+std::string StockData::ToString() const
+{
+	return this->timestamp + "," + this->name + "," + std::to_string(price);
+}
