@@ -97,7 +97,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)</Command>
+      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)
+xcopy /q /y $(ProjectDir)docker-compose.yml $(TargetDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,7 +120,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)</Command>
+      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)
+xcopy /q /y $(ProjectDir)docker-compose.yml $(TargetDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -137,7 +139,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)</Command>
+      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)
+xcopy /q /y $(ProjectDir)docker-compose.yml $(TargetDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -159,7 +162,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)</Command>
+      <Command>xcopy /q /y $(SolutionDir)librdkafka\$(PlatformTarget)\$(Configuration)\*.dll $(TargetDir)
+xcopy /q /y $(ProjectDir)docker-compose.yml $(TargetDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -171,6 +175,7 @@
     <ClCompile Include="StockData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="docker-compose.yml" />
     <None Include="market_data.csv">
       <DeploymentContent>true</DeploymentContent>
     </None>

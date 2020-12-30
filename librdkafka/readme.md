@@ -1,0 +1,1 @@
+Need to include these dlls as no Kafka NuGet package for MSVC v142 exists.

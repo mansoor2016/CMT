@@ -2,6 +2,7 @@
 #include <array>
 #include <string>
 #include <cassert>
+#include <sstream>
 
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
@@ -25,5 +26,12 @@ StockData::StockData(std::string&& dataRow)
 
 std::string StockData::ToString() const
 {
-	return this->timestamp + "," + this->name + "," + std::to_string(price);
+	std::stringstream ss;
+	ss	<< this->timestamp 
+		<< ","
+		<< this->name
+		<< ","
+		<< price;
+
+	return ss.str();
 }

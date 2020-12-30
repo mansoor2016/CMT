@@ -22,6 +22,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Kafka">
+      <UniqueIdentifier>{16d62010-24ca-494b-bda4-6f5b1009bad3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CMT.cpp">
@@ -47,6 +50,9 @@
     <None Include="packages.config" />
     <None Include="market_data.csv">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="docker-compose.yml">
+      <Filter>Kafka</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

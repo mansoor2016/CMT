@@ -14,7 +14,7 @@ class KafkaProducer : public IProducer
 	std::string producer_name;
 
 	const std::string topic = "StockData";
-	const std::string brokers = "kafkaserver:9092";
+	const std::string brokers = "localhost:9092";
 
 	const int32_t partition = RdKafka::Topic::PARTITION_UA;
 public:
@@ -22,5 +22,6 @@ public:
 
 	~KafkaProducer();
 
+	RdKafka::ErrorCode Publish(StockData stock_data) const;
 	void Publish(std::shared_ptr<MarketData> data) const override;
 };
